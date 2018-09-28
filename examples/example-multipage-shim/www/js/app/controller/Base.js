@@ -1,4 +1,6 @@
+//
 define(function () {
+    // constructor for a controller for Base model
     function controllerBase(id) {
         this.id = id;
     }
@@ -14,5 +16,5 @@ define(function () {
         }
     };
 
-    return controllerBase;
+    return controllerBase; // exports the controller class as "./Base"
 });

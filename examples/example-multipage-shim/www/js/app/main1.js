@@ -1,6 +1,7 @@
 define(function (require) {
     var $ = require('jquery'),
-        lib = require('./lib'),
+        lib = require('./lib'), // not the dir, but lib.js
+        // it will use MVC:
         controller = require('./controller/c1'),
         model = require('./model/m1'),
         backbone = require('backbone'),
@@ -10,10 +11,11 @@ define(function (require) {
     //common and specific pieces.
     controller.setModel(model);
     $(function () {
-        controller.render(lib.getBody());
+        var $body = lib.getBody();
+        controller.render($body);
 
         //Display backbone and underscore versions
-        $('body')
+        $body
             .append('<div>backbone version: ' + backbone.VERSION + '</div>')
             .append('<div>underscore version: ' + underscore.VERSION + '</div>');
     });

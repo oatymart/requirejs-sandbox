@@ -1,4 +1,5 @@
 define(function () {
+    // constructor
     function modelBase(title) {
         this.title = title;
     }
@@ -9,5 +10,5 @@ define(function () {
         }
     };
 
-    return modelBase;
+    return modelBase;   // exports the model "class" as "./Base"
 });
