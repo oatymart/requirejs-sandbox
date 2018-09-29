@@ -7,16 +7,15 @@ requirejs(["helper/util"], function(util) {
     //the module value for "helper/util".
 });
 
-require(['Models/User'], function(User) {
+require(['models/User', 'controllers/ListController'], function(User, ListController) {
     
+    // Make some users and store them locally:
     var users = ['Andy', 'Bob', 'Carly']
         .map(function(name) {
             return new User(name);
         });
-    
-    for (var i = 0, len = users.length; i < len; i++) {
-        console.log(users[i].name);
-    }
-    
     localStorage.users = JSON.stringify(users);
+
+    // Render list:
+    ListController.start(); 
 });
