@@ -6,3 +6,17 @@ requirejs(["helper/util"], function(util) {
     //util's dependencies have loaded, and the util argument will hold
     //the module value for "helper/util".
 });
+
+require(['Models/User'], function(User) {
+    
+    var users = ['Andy', 'Bob', 'Carly']
+        .map(function(name) {
+            return new User(name);
+        });
+    
+    for (var i = 0, len = users.length; i < len; i++) {
+        console.log(users[i].name);
+    }
+    
+    localStorage.users = JSON.stringify(users);
+});
