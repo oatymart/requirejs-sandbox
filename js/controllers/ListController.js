@@ -1,4 +1,4 @@
-define(['Views/ListView'], function(ListView) {
+define(['views/ListView'], function(ListView) {
     
     function start() {
         var users = JSON.parse(localStorage.users);
