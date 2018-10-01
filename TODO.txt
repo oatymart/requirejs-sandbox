@@ -1,0 +1,3 @@
+apply ESLint config
+apply templating solution
+add jQuery + jQueryUI
