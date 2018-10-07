@@ -1,0 +1,13 @@
+body {
+    background: moccasin;
+    color: navy;
+
+    header {
+        color: green; 
+    }
+
+    &:first-child {
+        color: red;
+    }
+}
+

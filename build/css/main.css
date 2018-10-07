@@ -1,0 +1,7 @@
+body {
+  background: moccasin;
+  color: navy; }
+  body header {
+    color: green; }
+  body:first-child {
+    color: red; }
