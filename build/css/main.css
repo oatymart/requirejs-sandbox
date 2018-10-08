@@ -5,3 +5,6 @@ body {
     color: green; }
   body:first-child {
     color: red; }
+
+body {
+  font-family: Georgia; }
