@@ -1,0 +1,26 @@
+{
+  "name": "requirejs-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mn113/requirejs-sandbox.git"
+  },
+  "author": "M. Nicholson",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/mn113/requirejs-sandbox/issues"
+  },
+  "homepage": "https://github.com/mn113/requirejs-sandbox#readme"
+}
