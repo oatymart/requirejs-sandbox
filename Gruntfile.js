@@ -6,39 +6,39 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'build/css/main.css' : 'scss/colors.scss'
+                    'build/css/main.css' : ['scss/main.scss']
                 }
             }
         },
         lint: {
             // eslint task
         },
-        bundle: {
-            // concat task
-            concat: {
-                options: {
-                    // define a string to put between each file in the concatenated output
-                    separator: ';'
-                },
-                dist: {
-                    // the files to concatenate
-                    src: ['js/**/*.js'],
-                    // the location of the resulting JS file
-                    dest: 'build/everything.js'
-                }
+        // concat task
+        concat: {
+            options: {
+                // define a string to put between each file in the concatenated output
+                separator: ';'
             },
-            // uglify task
-            uglify: {
-                options: {
-                    // the banner is inserted at the top of the output
-                    banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-                },
-                dist: {
-                    files: {
-                        'build/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
-                    }
+            dist: {
+                // the files to concatenate
+                src: ['js/**/*.js'],
+                // the location of the resulting JS file
+                dest: 'build/js/everything.js'
+            }
+        },
+        // uglify task
+        uglify: {
+            options: {
+                // the banner is inserted at the top of the output
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+            },
+            dist: {
+                files: {
+                    'build/js/everything.min.js': ['<%= concat.dist.dest %>']
                 }
             }
+        },
+        bundle: {
         },
         watch: {
             files: ['<%= sass.dist.files %>'],
@@ -55,22 +55,28 @@ module.exports = function(grunt) {
     // load all grunt tasks matching the `grunt-*` pattern
     require('load-grunt-tasks')(grunt);
 
-    grunt.loadNpmTasks('grunt-sass');
-    grunt.registerTask('dev', ['sass']);
+    // Load local tasks.
+    //grunt.loadTasks('tasks'); // no local `tasks` folder
 
-        /*
+    //grunt.loadNpmTasks('grunt-sass');
+
+    /*
      *task to run by extension concurrently
      */
     grunt.config('concurrent', {
-        build : ['bundleall', 'sassall']
+        build : ['all']
     });
 
     /*
      * Create task alias
      */
-    grunt.registerTask('sassall', "Compile all sass files", sassTasks);
-    grunt.registerTask('bundleall', "Compile all js files", bundleTasks);
-    grunt.registerTask('testall', "Run all tests", ['connect:test', 'qunit_junit'].concat(testTasks));
+    grunt.registerTask('js', "Build js files", ['concat', 'uglify']);
+    grunt.registerTask('all', "All my tasks", ['sass', 'concat', 'uglify']);
+    grunt.registerTask('default', ['all']);
+
+    // grunt.registerTask('sassall', "Compile all sass files", sassTasks);
+    // grunt.registerTask('bundleall', "Compile all js files", bundleTasks);
+    // grunt.registerTask('testall', "Run all tests", ['connect:test', 'qunit_junit'].concat(testTasks));
     grunt.registerTask('build', "The full build sequence", ['concurrent:build']);
 
 };
