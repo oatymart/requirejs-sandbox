@@ -5,20 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>RequireJS MVC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="build/css/main.css" />
-    <!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
-    <script data-main="js/main" src="js/lib/require.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body>
-    <div id="page-wrap">
+    <a href="#" id="jumplink">Jump to content</a>
+    <div id="container">
         <header>
-            <h1>RequireJS, MVC, SCSS & Grunt</h1>
+            <img src="" alt="tao logo">
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
         </header>
+        <nav id="main_navigation">
+            <p>Time remaining: 00:05:34</p>
+        </nav>
+        <nav id="test_navigation">
+            <ul>
+                <li><a>Submit</a></li>
+                <li><a>Prev</a></li>
+                <li><a>Next</a></li>
+            </ul>
+        </nav>
         <main>
-            <h2>Heading 2</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa inventore in aut vel ullam explicabo magnam vitae tenetur et commodi quia nam eligendi dolorem eius aperiam adipisci, quos voluptatum nobis!</p>
+            <article id="content">
+                <h1>My users</h1>
+                <nav><a href="#list">List</a> - <a href="#add">Add</a></nav>
+                <div id="app"></div>            
+            </article>
+            <aside id="sidebar">
+                Sidebar
+            </aside>
         </main>
-        <footer>The End</footer>
+        <footer>
+            <p>Copyright &copy; 2018</p>
+        </footer>
+      <!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
+      <script data-main="js/main" src="js/lib/require.js"></script>
     </div>
 </body>
 </html>
