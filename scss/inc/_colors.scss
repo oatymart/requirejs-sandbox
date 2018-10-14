@@ -1,0 +1,35 @@
+#container {
+    color: #f4f4f4;
+}
+
+header {
+    background: #000;
+}
+
+nav {
+    &#main_navigation {
+        background: steelblue;
+    }
+
+    &#test_navigation {
+        background: slategrey;
+    }    
+}
+
+
+main {
+    background: #f00;
+    color: #111;
+
+    article#content {
+        background: #fff;
+    }
+
+    aside#sidebar {
+        background: #ddd;
+    }
+}
+
+footer {
+    background: #222;
+}

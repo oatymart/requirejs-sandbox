@@ -1,8 +1,10 @@
-apply ESLint config
-apply templating solution
+x apply ESLint config
+ apply templating solution
 add jQuery + jQueryUI
-apply scss
-use Grunt build process
+x apply scss
+x use Grunt build process
 add qunit tests
 tabindexing for sections
+import CSS functions from toolkit
+icon font
 try primary & secondary focuses
