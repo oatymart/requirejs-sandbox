@@ -1,13 +1,35 @@
-body {
-    background: moccasin;
-    color: navy;
+#container {
+    color: #f4f4f4;
+}
 
-    header {
-        color: green; 
+header {
+    background: #000;
+}
+
+nav {
+    &#main_navigation {
+        background: steelblue;
     }
 
-    &:first-child {
-        color: red;
+    &#test_navigation {
+        background: slategrey;
+    }    
+}
+
+
+main {
+    background: #f00;
+    color: #111;
+
+    article#content {
+        background: #fff;
+    }
+
+    aside#sidebar {
+        background: #ddd;
     }
 }
 
+footer {
+    background: #222;
+}

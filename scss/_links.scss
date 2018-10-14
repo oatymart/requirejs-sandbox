@@ -1,0 +1,10 @@
+a {
+    &#jumplink {
+        display: none;
+        position: absolute;
+
+        &:focus {
+            display: block;
+        }    
+    }
+}
